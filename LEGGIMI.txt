@@ -1,0 +1,203 @@
+PRIMA E DOPO – versione 1.10 (10 novembre 2026)
+© 2026 Edoardo Battistel
+=====================================================================
+
+Novità della 1.10 (dopo la prima prova vera di Eta Carinae)
+----------------
+- prima della misura ogni epoca viene confrontata con l'ultima: quelle che non si correlano
+  (troppo rumore o saturazione, come l'immagine WFPC2 del 1994) vengono escluse dalla misura
+  e restano nell'animazione. Il registro dice quali.
+- Eta Carinae: filtro dei dettagli da 0,1″ a 0,5″ (invece di 0,05″-0,3″: le immagini WFPC2 sono
+  rumorose) e centro dell'espansione fisso sulla stella.
+- MAST: le osservazioni ancora riservate vengono saltate (con la 1.9 l'ACS del 2026 dava
+  «401 Unauthorized»).
+Prova sui FITS allineati veri della 1.9: 1997→2018 +13,06 % → anno 1836 (Grande Eruzione:
+1843); coppia 1997→2001 → 1843 ± 27. L'incertezza scritta (± 3) è troppo piccola: contare
+su una decina di anni.
+
+Novità della 1.9
+----------------
+- nuovo oggetto: Eta Carinae – la nebulosa Homunculus (Hubble). Il programma cerca le immagini
+  Hubble in MAST (WFPC2, ACS, WFC3; filtri F631N, F658N, F656N, F550M, F555W, F606W, F625W,
+  F675W, F814W), sceglie il filtro presente nel maggior numero di anni, al massimo 6 epoche,
+  scarica i prodotti combinati (_drc / _drz), allinea sulla stella (immagine levigata di 0,3″:
+  funziona anche con il buco di saturazione al centro) e misura l'espansione come per M 1
+  (campo 30″ a 0,05″/pixel, 2350 parsec). L'anno trovato va confrontato con la Grande
+  Eruzione del 1843. Prova simulata: 1845 ± 17 (vero 1843).
+- la diagnostica prova MAST e stampa le righe grezze (per correggere i filtri se servisse).
+- M 1 chiuso con il guscio esterno: 1104 ± 18 (prova vera della 1.8).
+
+Novità della 1.8
+----------------
+- M 1: le coppie di epoche vengono misurate anche sul SOLO guscio esterno (oltre 90″ dal centro),
+  lontano dal cuore della nebulosa che brilla di luce continua (sincrotrone). Serve a capire se
+  la coppia 1991→2012 (lastra → Pan-STARRS, filtro r largo) dà meno espansione per colpa di
+  quella luce. Nei risultati c'è il confronto «tutta la nebulosa → solo guscio» per ogni coppia.
+Prova vera con la 1.7: 1951→1991 anno 1070 ± 29, 1951→2012 1084 ± 25, 1991→2012 842 ± 105.
+
+Novità della 1.7
+----------------
+- la data delle lastre dall'ESO è scritta «1991/10/18»: ora si legge (DSS2 di M 1: 18/10/1991).
+- ogni coppia di epoche ha la sua incertezza (8 settori + 1,5 %), anche sull'anno e sulla
+  data stimata: una coppia di soli 20 anni ha un'incertezza molto più grande.
+IMPORTANTE: premi «1. Cerca le epoche» per M 1, così la DSS2 prende la data dell'ESO.
+
+Novità della 1.6
+----------------
+- controllo con le coppie di epoche: con tre o più epoche, oltre a prima→ultima misura anche
+  ogni coppia vicina (per M 1: 1951→1991 e 1991→2012) con lo stesso centro. Per un'epoca
+  con la data non nota (la lastra DSS2) ricava dall'espansione in che anno è stata presa e
+  dice se cade negli anni della survey (POSS-II 1985-2000): se sì, le tre lastre sono coerenti.
+- data delle lastre DSS: se lo STScI non la dà, prova il server DSS dell'ESO.
+Prima prova vera con la 1.5: M 1 anno 1084 ± 25 (261 frecce), Cassiopea A 0,20 % all'anno,
+anno 1510 ± 151 (come le misure professionali; la data vera è ~1680 perché il gas ha frenato).
+
+Novità della 1.5 (dopo le prove vere di M 1 e Cassiopea A)
+----------------
+- misura dell'espansione: vengono tolte solo le stelle VERE, cioè sorgenti puntiformi ferme
+  nello stesso punto nella prima e nell'ultima epoca. Prima venivano tolti anche nodi dei
+  filamenti: questo spingeva la misura verso «meno espansione» (M 1: anno 1075, troppo vecchio;
+  Cassiopea A: quasi tutto il resto cancellato, +0,15 %). Nei raggi X non si toglie niente.
+  Prove simulate: M 1 1112-1153 (vero 1130) con ~400 frecce; Cas A simulata 1689 (vero 1680).
+- nelle immagini al massimo 250 frecce (nel CSV ci sono tutte); il registro dice quanta parte
+  della nebulosa è stata tolta come «stelle».
+
+Novità della 1.4 (dopo la prima prova vera di M 1)
+----------------
+- i tuoi FITS trovati da soli per «M 1 luce visibile» compaiono ma NON spuntati (quelli JWST
+  infrarossi sono segnalati): nella 1.3 un NIRCam del 2022 era diventato il riferimento e la
+  misura confrontava una lastra rossa con l'infrarosso. Spuntali a mano se vuoi; la scelta
+  viene ricordata anche quando rifai «Cerca le epoche».
+- Pan-STARRS: M 1 cade sul bordo di una cella (copriva il 64 % del campo); ora scarica lo
+  stesso ritaglio dalle celle vicine e le unisce.
+- riferimento per l'allineamento = l'epoca che copre più campo; la misura usa la prima e
+  l'ultima epoca che coprono almeno l'80 %; per M 1 e Barnard le epoche sotto il 50 % vengono
+  saltate.
+- nuovi oggetti, tutti con i dati scaricati da soli (nessun file da caricare):
+    Cassiopea A in raggi X (Chandra 1999-oggi, misura dell'espansione; esplosione ~1680);
+    Groombridge 1830, 61 Cygni, Lalande 21185 (moto proprio; moto e distanza chiesti
+      a Gaia DR3 all'ESA, riserva IRSA; risultato salvato in gaia.json);
+    NGC 2261 Nebulosa Variabile di Hubble e NGC 1555 Nebulosa di Hind (solo animazione).
+  Anche Barnard ora prende i valori da Gaia. La stella si cerca entro 15″ dalla posizione
+  prevista (61 Cygni B è a 30″ dalla A).
+IMPORTANTE: con la 1.4 premi di nuovo «1. Cerca le epoche» prima di «2. Prepara» (così
+le epoche salvate dalla 1.3 vengono aggiornate).
+
+Novità della 1.3
+----------------
+- Chandra: la tabella chanmaster di HEASARC non ha la colonna «obsid»; il numero
+  dell'osservazione è in «datalinkid». Con la 1.2 le 60 osservazioni ACIS senza reticolo
+  di M 1 venivano scartate per questo.
+
+Novità della 1.2
+----------------
+- Chandra (HEASARC): filtri più tolleranti (raggio 3′, nomi delle colonne alternativi, stati) e la
+  diagnostica stampa le righe grezze e i motivi di scarto (con la 1.1 HEASARC rispondeva ma
+  nessuna osservazione passava i filtri).
+- Nelle animazioni e nella pagina gli anni approssimati hanno «≈» davanti (per M 1 conta solo la
+  data della prima e dell'ultima epoca: DSS1 7/11/1951 e Pan-STARRS 2012,09, entrambe lette).
+- Nota: la data della lastra DSS2 lo STScI per ora non la dà («Something went wrong»): resta
+  approssimata (≈ 1991) ma non entra nella misura dell'espansione.
+
+Novità della 1.1
+----------------
+- le date delle lastre DSS dello STScI con l'ora scritta «09:60:00» (minuto 60) ora si leggono
+  (la 1.0 le scartava e usava una data approssimata);
+- DSS2: se lo STScI non dà il FITS prova un riquadro più grande e il nome «phase2_gsc2», e nel
+  registro scrive che cosa ha risposto;
+- HEASARC (Chandra) non accetta più il formato CSV: ora prova VOTable, poi gli altri formati;
+- se un'epoca ha la data approssimata, la cerca anche nell'intestazione del file scaricato.
+
+Cosa fa
+-------
+Prende lo stesso oggetto del cielo fotografato a anni di distanza, mette tutte le
+immagini sulla stessa griglia (Nord in alto, Est a sinistra), le allinea con le stelle
+del campo, uguaglia nitidezza e luminosità tra strumenti diversi e crea:
+  - una GIF e un MP4 che passano da un'epoca all'altra;
+  - una pagina con il cursore (si apre con un doppio clic, anche senza Internet):
+    «Cursore nel tempo», «Tendina prima/dopo» trascinabile, «Lampeggio», frecce sì/no,
+    testo ingrandibile con A+ / A−;
+  - la misura del movimento, con figura PNG e testo dei risultati.
+
+Gli oggetti della lista
+-----------------------
+1. M 1 – Nebulosa del Granchio (luce visibile)
+   DSS1 rosso (lastre di Palomar, anni '50), DSS2 rosso (anni '90), Pan-STARRS r (2010-2014).
+   Misura l'ingrandimento della nebulosa tra la prima e l'ultima epoca, trova il centro
+   dell'espansione, disegna le frecce sui filamenti (colore = velocità, a 2000 parsec)
+   e calcola in che anno sarebbe esplosa la stella se si espandesse sempre alla stessa
+   velocità. NB: il risultato esce di solito tra il 1100 e il 1150, non 1054: i filamenti
+   sono stati accelerati dal vento della pulsar (Trimble 1968: 1140; Nugent 1998: 1130).
+   Nell'animazione i passaggi tra un'epoca e l'altra sono «interpolati»: la nebulosa
+   si ingrandisce secondo l'espansione misurata, le stelle restano ferme.
+2. M 1 – il cuore in raggi X (Chandra)
+   Osservazioni Chandra ACIS senza reticolo dall'archivio HEASARC (al massimo 8,
+   distribuite negli anni) più i tuoi file Chandra di M 1 (trovati da soli in
+   ~/Scrivania/Astronomia/CHANDRA/M_1). Allineate sulla pulsar. Solo animazione.
+3. Stella di Barnard (moto proprio)
+   Stesse survey di M 1. Ritrova la stella in ogni epoca, misura il moto proprio e la
+   velocità e li confronta con Gaia DR3 (10,39″ all'anno, 90 km/s).
+4. Cassiopea A in raggi X, Groombridge 1830, 61 Cygni, Lalande 21185, NGC 2261, NGC 1555
+   (dalla 1.4, vedi le novità).
+5. File tuoi (qualsiasi oggetto)
+   Scegli tu i FITS («Aggiungi file tuoi…»): almeno due epoche con coordinate WCS.
+In arrivo (grigi nella lista): V838 Monocerotis, SN 1987A.
+
+Come si usa
+-----------
+1. Scegli l'oggetto a sinistra.
+2. «1. Cerca le epoche»: interroga gli archivi (date delle lastre dallo STScI) e cerca
+   i tuoi FITS nella cartella Astronomia (cartelle con il nome dell'oggetto).
+   Scheda «Epoche»: clic su «Usa» per includere/escludere; doppio clic sull'anno per
+   correggerlo. Un «?» dopo l'anno vuol dire data approssimata (es. lastra di cui lo
+   STScI non ha dato la data): l'anno dell'esplosione di M 1 dipende molto dalla data
+   della prima lastra (1 anno di errore ≈ 15 anni sull'esplosione).
+3. «2. Prepara»: scarica, allinea, misura, crea GIF, MP4 e pagina (1-3 minuti).
+   «■ Ferma» interrompe. Il registro dei passi è nella scheda «Registro».
+4. Scheda «Anteprima»: cursore tra le epoche, frecce/traccia, pulsanti per aprire
+   GIF, MP4 e pagina. Scheda «Misura»: figura e risultati.
+In alto a destra: «Dimensione testo» (100-200 %, normalmente 150 %) e la cartella dei
+risultati.
+
+Dove finiscono i file
+---------------------
+~/Scrivania/Astronomia/Prima_e_dopo/<oggetto>/
+  <oggetto>.gif, <oggetto>.mp4, <oggetto>_confronto.html (pagina con cursore),
+  <oggetto>_misura.png, <oggetto>_risultati.txt, <oggetto>_frecce.csv (solo M 1),
+  risultati.json, epoche.json (le tue scelte), epoche/ (FITS scaricati),
+  allineate/ (FITS sulla griglia comune: si possono aprire con AutoAstroPipe),
+  lavoro/ (immagini per l'anteprima).
+
+Righe di comando
+----------------
+  python3 prima_e_dopo.py --autotest       prove senza rete (nebulosa e stella simulate)
+  python3 prima_e_dopo.py --diagnostica    prova SkyView, STScI, Pan-STARRS, HEASARC, ffmpeg
+  python3 prima_e_dopo.py --fai M1_ottico  tutto da riga di comando (anche M1_raggiX, Barnard)
+
+Compilazione
+------------
+  bash crea_eseguibile_ubuntu.sh
+(usa ~/Claude/Astropy/venv_compila; installa ~/.local/bin/PrimaEDopo con l'icona nel menu e
+sulla Scrivania, StartupWMClass=Primaedopo). Per l'MP4 serve ffmpeg: sudo apt install ffmpeg.
+
+Come misura (in breve)
+----------------------
+- Allineamento: stelle trovate nelle due immagini (fuori dalla nebulosa), accoppiate e
+  usate per una trasformazione affine (spostamento, rotazione, scala). Lo scarto medio
+  compare nel registro e nei risultati.
+- Nitidezza: tutte le epoche vengono sfocate fino a quella meno nitida (DSS1).
+  Luminosità: istogrammi uguagliati (corregge anche la risposta non lineare delle lastre).
+- Espansione: dalle immagini si tolgono le stelle (non si espandono), si tengono solo i
+  dettagli dei filamenti e si cerca l'ingrandimento (e il centro) che fa coincidere
+  meglio la prima epoca con l'ultima. Incertezza: 8 settori misurati separatamente +
+  una parte sistematica (1,5 %). Frecce: corrispondenza locale dei filamenti in riquadri
+  di 24″.
+- Prove con una nebulosa simulata che esplode nel 1130 (lastre sature comprese):
+  il programma trova tra 1108 e 1127, con incertezza ±14.
+
+Limiti (dalla 1.0)
+----------------
+- Le immagini Hubble di M 1 (1999-2000 e 2005) non sono ancora usate: arriveranno con
+  V838 Mon e SN 1987A, che servono proprio Hubble.
+- La data di Pan-STARRS è quella media della survey se l'archivio non la dà (2012).
+- Nei raggi X la nebulosa cambia forma (anelli, getto): nessuna misura, solo animazione.

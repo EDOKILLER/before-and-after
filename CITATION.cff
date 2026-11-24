@@ -1,0 +1,17 @@
+cff-version: 1.2.0
+message: "If you use this software, please cite it as below, and credit the data providers listed in README.md."
+title: "Before and After (Prima e dopo): measure how the sky changes: nebula expansion and proper motions from survey images taken decades apart"
+authors:
+  - family-names: Battistel
+    given-names: Edoardo
+version: "1.10"
+date-released: 2026-11-10
+license: BSD-3-Clause
+repository-code: "https://github.com/EDOKILLER/before-and-after"
+keywords:
+  - proper motion
+  - nebula expansion
+  - Crab Nebula
+  - DSS
+  - Pan-STARRS
+  - Hubble
